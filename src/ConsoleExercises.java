@@ -17,7 +17,7 @@ public class ConsoleExercises {
 //        int userInt = scanner.nextInt();
 //        System.out.println("You entered: --> \"" + userInt + "\" <-- ");
 
-        //TODO:  What happens if you input something that is not an integer?
+        // TODO:  What happens if you input something that is not an integer?
 //        Exception in thread "main" java.util.InputMismatchException
 //        at java.base/java.util.Scanner.throwFor(Scanner.java:939)
 //        at java.base/java.util.Scanner.next(Scanner.java:1594)
@@ -33,11 +33,11 @@ public class ConsoleExercises {
 //        System.out.println("Your first entry is: " + userInput1 + " Your second entry is: " + userInput2 + " Your third entry is: " + userInput3 );
 
 
-        //TODO: What happens if you enter less than 3 words?
+        // TODO: What happens if you enter less than 3 words?
 
         // the console cursor moves to the next line awaiting the last inputs
 
-        //TODO: What happens if you enter more than 3 words?
+        // TODO: What happens if you enter more than 3 words?
 
         // the console displays the first 3 words you type
 
@@ -64,6 +64,7 @@ public class ConsoleExercises {
         double length = scanner.nextDouble();
         double width = scanner.nextDouble();
         double height = scanner.nextDouble();
+        // int newInt = Integer.parseInt(length);
         System.out.println("The length of the classroom is: " + length + ". The width of the classroom is: " + width + ". The height of the classroom is: " + height);
 
         //2. TODO: Display the area and perimeter of that classroom.
@@ -72,7 +73,7 @@ public class ConsoleExercises {
 
         // BONUSES
 
-        //TODO: In your perimeter/area calculator: - Accept decimal entries. - Calculate the volume of the rooms in addition to the area and perimeter.
+        // TODO: In your perimeter/area calculator: - Accept decimal entries. - Calculate the volume of the rooms in addition to the area and perimeter.
 
         System.out.println("The volume of the classroom is: " + (length * width * height));
 
