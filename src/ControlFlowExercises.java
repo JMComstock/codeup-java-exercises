@@ -102,30 +102,35 @@ public class ControlFlowExercises {
         //  Only continue if the user agrees to.
 
 
-//        String userAnswer;
-//        do {
-//            Scanner scanner = new Scanner(System.in);
-//            System.out.println("What number would you like to go up to? ");
-//            int userInput = scanner.nextInt();
-//
-//            System.out.println("Here is your table!");
-//            System.out.println();
-//            System.out.format("%s   %s   %s%n", "number |", "squared |", "cubed");
-//            System.out.format("%s   %s   %s%n", "------ | ", "------ | ", "------");
-//            for (int i = 1; i <= userInput; i++) {
-//
-//                int numSquared = (int) Math.pow(i, 2);
-//                int numCubed = (int) Math.pow(i, 3);
-//                String message = "\n" + i + "      |  " + numSquared + "        |   " + numCubed;
-//                System.out.print(message);
-//
-//            }
-//
-//            System.out.println();
-//            System.out.println("Do you want to continue? (answer yes or no): ");
-//            userAnswer = scanner.next();
-//
-//        } while (userAnswer.equals("yes") || userAnswer.equals("Yes"));
+        String userAnswer;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("What number would you like to go up to? ");
+            int userInput = scanner.nextInt();
+
+            System.out.println("Here is your table!");
+            System.out.println();
+            System.out.format("%s   %s   %s%n", "number |", "squared |", "cubed");
+            System.out.format("%s   %s   %s%n", "------ | ", "------ | ", "------");
+
+            for (int i = 1; i <= userInput; i++) {
+
+                int numSquared = (int) Math.pow(i, 2);
+                int numCubed = (int) Math.pow(i, 3);
+                if(numSquared < 10) {
+                    String message = "\n" + i + "      |  " + numSquared + "        |   " + numCubed;
+                    System.out.print(message);
+                } else {
+                    String message = "\n" + i + "      |  " + numSquared + "       |   " + numCubed;
+                    System.out.print(message);
+                }
+            }
+
+            System.out.println();
+            System.out.println("Do you want to continue? (answer yes or no): ");
+            userAnswer = scanner.next();
+
+        } while (userAnswer.equals("yes") || userAnswer.equals("Yes"));
 
 
         //4. Convert given number grades into letter grades.
@@ -142,34 +147,34 @@ public class ControlFlowExercises {
         //D : 66 - 60
         //F : 59 - 0
 
-        String userAnswer;
-        do {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a numerical grade from 0 to 100: ");
-            int userGrade = sc.nextInt();
-
-            if(userGrade == 99 || userGrade == 100) {
-                System.out.println("you got an A+");
-            } else if(userGrade >= 88 && userGrade <=98) {
-                System.out.println("you got an A");
-            } else if(userGrade >= 80 && userGrade <=87) {
-                System.out.println("you got a B");
-            } else if(userGrade <= 79 && userGrade >=67) {
-                System.out.println("you got a C");
-            } else if(userGrade <= 66 && userGrade >=60) {
-                System.out.println("you got an D");
-            } else if(userGrade >= 0 && userGrade <= 59) {
-                System.out.println("you got an F");
-            } else {
-                System.out.println("you didn't input a valid grade");
-            }
-
-            System.out.println();
-            System.out.println("Do you want to continue? (answer yes or no): ");
-            userAnswer = sc.next();
-
-        } while (userAnswer.equals("yes") || userAnswer.equals("Yes"));
-
+//        String userAnswer;
+//        do {
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Enter a numerical grade from 0 to 100: ");
+//            int userGrade = sc.nextInt();
+//
+//            if(userGrade == 99 || userGrade == 100) {
+//                System.out.println("you got an A+");
+//            } else if(userGrade >= 88 && userGrade <=98) {
+//                System.out.println("you got an A");
+//            } else if(userGrade >= 80 && userGrade <=87) {
+//                System.out.println("you got a B");
+//            } else if(userGrade <= 79 && userGrade >=67) {
+//                System.out.println("you got a C");
+//            } else if(userGrade <= 66 && userGrade >=60) {
+//                System.out.println("you got an D");
+//            } else if(userGrade >= 0 && userGrade <= 59) {
+//                System.out.println("you got an F");
+//            } else {
+//                System.out.println("you didn't input a valid grade");
+//            }
+//
+//            System.out.println();
+//            System.out.println("Do you want to continue? (answer yes or no): ");
+//            userAnswer = sc.next();
+//
+//        } while (userAnswer.equals("yes") || userAnswer.equals("Yes"));
+//
 
     }
 }
