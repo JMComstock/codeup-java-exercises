@@ -36,6 +36,7 @@ public class ControlStatementsLoopsLecture {
 //
 //        // Don't do this!
 ////        boolean confirmation = userInput == "y";
+
 //        if(userInput.equals("y")) {
 //            System.out.println("yes, continue");
 //        } else {
