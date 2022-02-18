@@ -18,7 +18,7 @@ public class Bob {
             } else if (userInput.equals("")) {
                 System.out.println("Fine. Be that way!");
             } else {
-                return;
+                System.out.println("Whatever.");
             }
 
 
