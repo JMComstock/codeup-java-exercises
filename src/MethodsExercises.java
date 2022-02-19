@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -141,10 +142,40 @@ public class MethodsExercises {
     //    Use static methods to implement the method(s) that generate the random numbers.
     //    Use the .random method of the java.lang.Math class to generate random numbers.
 
+    public static void diceRoller () throws IOException {
+
+        String userAnswer;
+
+        do {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter the number of sides for a pair of dice: ");
+            int diceSides = scan.nextInt();
+            System.out.println("Roll the dice by pressing X ...");
+            String roller = scan.next();
+            int min = 1;
+            if(roller.equals("X")) {
+
+                double firstRoll = Math.floor(Math.random()*(diceSides-min+1)+min);
+                System.out.println("The first dice produced: " + (firstRoll));
+                double secondRoll = Math.floor(Math.random()*(diceSides-min+1)+min);
+                System.out.println("The second dice produced: " + secondRoll);
+
+            } else {
+                System.out.println("Guess you're not rolling the dice...");
+            }
+
+            System.out.println("Do you want to continue? (answer yes or no): ");
+            userAnswer = scan.next();
+
+        } while (userAnswer.equals("yes") || userAnswer.equals("Yes"));
 
 
 
-    public static void main(String[] args) {
+
+    }
+
+
+    public static void main(String[] args) throws IOException {
 
         add(1,2);
 
@@ -175,6 +206,8 @@ public class MethodsExercises {
         getInteger(1, 10);
 
         calculateFactorial();
+
+        diceRoller();
 
     }
 }
