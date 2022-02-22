@@ -23,8 +23,8 @@ public class Circle {
 
     public static void main(String[] args) {
 
-        System.out.println(getArea());
+        System.out.println("The area of a circle with the radius of 3 is: " + getArea());
 
-        System.out.println(getCircumference());
+        System.out.println("The circumference of a circle with te radius of 3 is: " + getCircumference());
     }
 }
