@@ -23,5 +23,10 @@ public class LectureEnvironment {
 
         // Well, can I access the instance property similarly to a static property? / NO!!!
 //        System.out.println("PersonLecture.firstName = " + Person.firstName);
+
+        // Back here: Let's make a PersonLecture with an age and mess with the visibility
+        PersonLecture mcPerson = new PersonLecture("Kurt", "Vonnegut", 60, "complicated");
+
+        System.out.println(mcPerson.shareAge());
     }
 }
