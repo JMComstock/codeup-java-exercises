@@ -30,8 +30,8 @@ public class HighLow {
         for (int i = 0; i < 10; i++) {
             randNum = (int) (Math.random() * range) + min;
         }
-        // show answer
-//        System.out.println(randNum);
+//         show answer
+        System.out.println(randNum);
 
         do {
             Scanner scanner = new Scanner(System.in);
