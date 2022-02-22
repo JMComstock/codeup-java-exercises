@@ -5,64 +5,83 @@ import java.util.Scanner;
 
 public class Input {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
-    public static String getString() {
-        System.out.println("Tell me how you're feeling.");
+    public Input() {
+        this.scanner = new Scanner(System.in);
+    }
+
+    public String getString() {
         return scanner.nextLine();
     }
 
-    public static boolean yesNo() {
-        System.out.println("Tell me yes or no...");
-        if(Objects.equals(scanner.nextLine(), "yes") || Objects.equals(scanner.nextLine(), "y")) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean yesNo() {
+        System.out.println("Type yes or no...");
+
+        String userInput = scanner.nextLine();
+        return userInput.equals("yes") || userInput.equals("y");
 
     }
 
-    public static int getInt(int min, int max) {
-        System.out.println("Give me a number within the specified range");
+    public int getInt(int min, int max) {
+        int userNum;
 
-        if(scanner.nextInt() >= min && scanner.nextInt() <= max)  {
-            System.out.println("Your number is in the range");
-        } else {
-            System.out.println("Your number is not in the range");
-        }
-        return 1;
+        do {
+            System.out.println("Enter a number between " + min +" and " + max + ": ");
+            userNum = scanner.nextInt();
+        } while (userNum < min || userNum > max);
+        return userNum;
+
     }
 
-    public static int getInt() {
+    public int getInt() {
+        System.out.println("Enter a number: ");
         return scanner.nextInt();
     }
 
-    public static void getDouble (double min, double max) {
-        System.out.println("Give me a number within the specified range");
+    public double getDouble (double min, double max) {
+        double userNum;
 
-        if(scanner.nextDouble() >= min && scanner.nextDouble() <= max)  {
-            System.out.println("Your number is in the range");
-        } else {
-            System.out.println("Your number is not in the range");
-        }
+        do {
+            System.out.println("Enter a decimal number between " + min +" and " + max + ": ");
+            userNum = scanner.nextDouble();
+        } while (userNum < min || userNum > max);
+        return userNum;
     }
 
-    public static void getDouble() {
-        scanner.nextDouble();
+    public double getDouble() {
+        System.out.println("Enter a number with decimals: ");
+
+        double userNum = scanner.nextDouble();
+
+        try {
+            return userNum;
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a number with decimals");
+            return getDouble();
+        }
+
     }
 
     public static void main(String[] args) {
 
-        getString();
+        System.out.println("Enter a string: ");
+        Input input = new Input();
+        System.out.println("You entered: " + input.getString());
 
-        yesNo();
+        boolean tOrF = input.yesNo();
+        System.out.println("You entered: " + tOrF);
 
-        getInt(1, 100);
+        int yourNumber = input.getInt(-Integer.MAX_VALUE, Integer.MAX_VALUE);
+        System.out.println("The number you entered is " + yourNumber);
 
-        getInt();
+        int randomInt = input.getInt();
+        System.out.println("The number you entered is: " + randomInt);
 
-        getDouble(1, 100);
+        double userDouble = input.getDouble(-Double.MAX_VALUE, Double.MAX_VALUE);
+        System.out.println("The decimal number you entered is: " + userDouble);
 
-        getDouble();
+        double anyDouble = input.getDouble();
+        System.out.println("The decimal number you enteresd is: " + anyDouble);
     }
 }
