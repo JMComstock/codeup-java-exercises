@@ -177,15 +177,15 @@ public class MethodsExercises {
 
     public static void main(String[] args) throws IOException {
 
-        add(1,2);
-
-        subtract(2, 1);
-
-        multiply(10, 10);
-
-        divide(4, 2);
-
-        modulus(5,3);
+//        add(1,2);
+//
+//        subtract(2, 1);
+//
+//        multiply(10, 10);
+//
+//        divide(4, 2);
+//
+//        modulus(5,3);
 
         int number = 10;
         int sumAdd = addRecursion(number);
