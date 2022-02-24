@@ -94,9 +94,9 @@ public class MethodsExercises {
 
         while (true) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a number between 1 and 10: ");
+            System.out.printf("Enter a number between %s %S: %n", min, max);
             int userInput = sc.nextInt();
-            if(userInput >= min && userInput <= max) {
+            if(userInput >= min & userInput <= max) {
                 System.out.println("Your number is inside of the specified range.");
                 break;
             } else {
