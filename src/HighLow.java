@@ -31,7 +31,7 @@ public class HighLow {
             randNum = (int) (Math.random() * range) + min;
         }
 //         show answer
-        System.out.println(randNum);
+//        System.out.println(randNum);
 
         do {
             Scanner scanner = new Scanner(System.in);
