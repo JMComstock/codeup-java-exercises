@@ -2,8 +2,8 @@ package movies;
 
 public class Movie {
 
-    private String name;
-    private String category;
+    public static String name;
+    public static String category;
 
     public Movie(String name, String category) {
         this.name = name;

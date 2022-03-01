@@ -64,16 +64,10 @@ public class MoviesApplication {
                     }
                     break;
                 case 6:
-                    System.out.println("Add your movie name and category separated by a comma.");
-                    String details = scanner.next();
-                    if(details.isEmpty()) {
-                        break;
-                    }
-                    String[] parts = details.split(",");
-                    String name = parts[0];
-                    String category = parts[1];
-                    MoviesArray.add(new Movie(name, category));
-                    System.out.println("Your movie was added.");
+                    System.out.println("Add your movie name: ");
+                    String userMovieName = scanner.next();
+                    System.out.println("Add your movie category: ");
+                    String userMovieCategory = scanner.next();
                     break;
             }
 
