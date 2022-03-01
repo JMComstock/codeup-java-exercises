@@ -106,6 +106,6 @@ public class MoviesArray {
         };
     }
 
-    public static void add(String userMovieName) {
+    public static void add(Movie movie) {
     }
 }

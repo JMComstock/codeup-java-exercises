@@ -64,19 +64,17 @@ public class MoviesApplication {
                     }
                     break;
                 case 6:
-//                    System.out.println("Add your movie name: ");
-//                    String userMovieName = scanner.nextLine();
-//                    MoviesArray.add(userMovieName);
-//
-//                    System.out.println("Add your movie category: ");
-//                    String userMovieCategory = scanner.nextLine();
-//                    MoviesArray.add(userMovieCategory);
-//                    for (movies.Movie Movie : MoviesArray.findAll()) {
-//                        if (Objects.equals(Movie.getCategory(), "animated")) {
-//                            System.out.println(Movie.getName() + " -- " + Movie.getCategory());
-//                        }
-//                    }
-//                    break;
+                    System.out.println("Add your movie name and category separated by a comma.");
+                    String details = scanner.next();
+                    if(details.isEmpty()) {
+                        break;
+                    }
+                    String[] parts = details.split(",");
+                    String name = parts[0];
+                    String category = parts[1];
+                    MoviesArray.add(new Movie(name, category));
+                    System.out.println("Your movie was added.");
+                    break;
             }
 
             Scanner sc = new Scanner(System.in);
