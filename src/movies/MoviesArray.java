@@ -105,9 +105,4 @@ public class MoviesArray {
                 new Movie("Yankee Doodle Dandy", "musical")
         };
     }
-
-    public static void add(String userMovieName, String userMovieCategory) {
-        Movie.name =  userMovieName;
-        Movie.category = userMovieCategory;
-    }
 }
