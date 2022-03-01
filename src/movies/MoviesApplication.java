@@ -1,5 +1,6 @@
 package movies;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -27,8 +28,18 @@ public class MoviesApplication {
                     break;
                 case 1:
                     System.out.println("Here is all the movies...\n");
-                    for (movies.Movie Movie : MoviesArray.findAll()) {
-                        System.out.println(Movie.getName() + " -- " + Movie.getCategory());
+                    System.out.println("FINDALL RESULT: " + Arrays.toString(MoviesArray.findAll()));
+                    Movie[] outerArr = MoviesArray.findAll(); // [[name,cat],[name,cat],[name,cat],[]]
+                    for (movies.Movie eachMovieArr : outerArr) { // array of arrays
+                        System.out.println(eachMovieArr.getName());
+
+//                        for(int i = 0; i < outerArr.length; i +=1 ){
+//                        System.out.println("outerArr[i]: " + (outerArr[i].getName()));
+////                        System.out.println(movies.Movie);
+////                        System.out.println(movies);
+//
+//                        System.out.println(eachMoviearr.getName() + " -- " + eachMoviearr.getCategory());
+//                    }
                     }
                     break;
                 case 2:
@@ -64,17 +75,23 @@ public class MoviesApplication {
                     }
                     break;
                 case 6:
-                    System.out.println("Add your movie name: ");
-                    String userMovieName = scanner.next();
-                    System.out.println("Add your movie category: ");
-                    String userMovieCategory = scanner.next();
-                    break;
+//                    System.out.println("Add your movie name: ");
+//                    String userMovieName = scanner.next();
+//                    System.out.println("Add your movie category: ");
+//                    String userMovieCategory = scanner.next();
+//                    MoviesArray.add(userMovieName, userMovieCategory);
+//                    System.out.println("Your movie was added.");
+//                   for (movies.Movie Movie : MoviesArray.findAll()) {
+//                        System.out.println(Movie.getName() + " -- " + Movie.getCategory());
+//                    }
+//                    break;
             }
 
             Scanner sc = new Scanner(System.in);
             System.out.println("Do you want to choose another category? (Y/N) ");
             userChoice = sc.nextLine();
 
-        } while (Objects.equals(userChoice, "Y"));
+        } while (Objects.equals(userChoice, "Y") || Objects.equals(userChoice, "y"));
+
     }
 }

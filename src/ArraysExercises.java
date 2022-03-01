@@ -30,5 +30,4 @@ public class ArraysExercises {
         System.out.println("myArray before adding a new element: " + Arrays.toString(Person));
 
     }
-
 }

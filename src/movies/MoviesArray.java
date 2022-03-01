@@ -106,6 +106,8 @@ public class MoviesArray {
         };
     }
 
-    public static void add(Movie movie) {
+    public static void add(String userMovieName, String userMovieCategory) {
+        Movie.name =  userMovieName;
+        Movie.category = userMovieCategory;
     }
 }
