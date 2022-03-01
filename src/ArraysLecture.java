@@ -162,5 +162,39 @@ public class ArraysLecture {
         System.out.println(Arrays.toString(random));
         Arrays.sort(random);
         System.out.println(Arrays.toString(random));
+
+        // TWO_DIMENSIONAL ARRAYS
+        int[] myArr = new int[3];
+
+        int[][] myMatrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        System.out.println(Arrays.deepToString(myMatrix));
+
+        // print out every nested element in the matrix
+        // do a loop
+        // do another loop
+        // loop de loop
+
+        for(int[] rows : myMatrix){
+            System.out.println("---------- this is a new row ----------");
+            for(int column : rows) {
+                System.out.println(column);
+            }
+        }
+
+        int[][] newMatirix = new int[4][4];
+        newMatirix[0][0] = 0;
+        System.out.println(Arrays.deepToString(newMatirix));
+
+
+//        int [][][] myMatrix = {
+//                {{1,2,3}, {4,5,6}, {7,8,9}},
+//                {{1,2,3}, {4,5,6}, {7,8,9}},
+//                {{1,2,3}, {4,5,6}, {7,8,9}}
+//        };
+
     }
 }
