@@ -6,13 +6,19 @@ public class Rectangle extends Quadrilateral implements Measurable {
         super(length, width);
     }
 
-    @Override
     public double getPerimeter() {
-        return (length * 2) + (width * 2);
+        return 2 * (this.length + this.width);
     }
 
-    @Override
     public double getArea() {
-        return length * width;
+        return this.length * this.width;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public void setWidth(double width) {
+
     }
 }
