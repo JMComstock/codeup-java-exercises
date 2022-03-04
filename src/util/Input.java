@@ -1,11 +1,10 @@
 package util;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner;
+    public Scanner scanner;
 
     public Input() {
         this.scanner = new Scanner(System.in);
