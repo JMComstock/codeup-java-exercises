@@ -37,6 +37,7 @@ public class HashMaps {
         // replace something without having to use the entire put method
         authorsBooks.replace("J.D. Salinger", "Nine Stories");
         System.out.println("authorsBooks = " + authorsBooks);
+        // remove all items from hashmap
         authorsBooks.clear();
         System.out.println("authorsBooks = " + authorsBooks);
 
