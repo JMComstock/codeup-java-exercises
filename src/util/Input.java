@@ -35,7 +35,19 @@ public class Input {
 
     public int getInt() {
         System.out.println("Enter a number: ");
-        return scanner.nextInt();
+        int userNum = scanner.nextInt();
+
+        try {
+
+            return userNum;
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("The number you entered is not an Integer" + e.getMessage());
+            System.out.println("Here is more about the error: ");
+            e.printStackTrace();
+        }
+        return userNum;
     }
 
     public double getDouble (double min, double max) {
@@ -56,10 +68,11 @@ public class Input {
         try {
             return userNum;
         } catch (NumberFormatException e) {
-            System.out.println("That is not a number with decimals");
-            return getDouble();
+            System.out.println("That is not a number with decimals: " + e.getMessage());
+            System.out.println("More info about the error: ");
+            e.printStackTrace();
         }
-
+        return userNum;
     }
 
     public static void main(String[] args) {
