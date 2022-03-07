@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class GradesApplication {
 
+
     public static void main(String[] args) {
 
         HashMap<String, Student> students = new HashMap<>();
@@ -38,11 +39,12 @@ public class GradesApplication {
             for(String name : students.keySet()) {
                 System.out.printf("|%s| ", name);
             }
+
             System.out.println("\n\nWhat student would you like to see more information on?");
             String choice = sc.nextLine();
             Student userChoice = students.get(choice);
             if(students.containsKey(choice)) {
-                System.out.printf("Name: %s - GitHub Username: %s%nCurrent Average: %.1f%n", userChoice.getName(), choice, userChoice.getGradeAverage());
+                System.out.printf("Name: %s - GitHub Username: %s%nAll Grades: %s%nCurrent Average: %.1f%n", userChoice.getName(), choice, userChoice.getGrades(), userChoice.getGradeAverage());
             } else {
                 System.out.println("Sorry, no student found with the GitHub username of " + "\"" + choice + "\"." );
             }

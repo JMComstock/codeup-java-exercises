@@ -17,6 +17,12 @@ public class Student {
         return name;
     }
 
+    // return the student's grades
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
+
     // adds the given grade to the grades property
     public void addGrade(int grade) {
         grades.add(grade);
