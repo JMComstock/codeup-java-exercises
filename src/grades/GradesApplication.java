@@ -1,8 +1,6 @@
 package grades;
 
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class GradesApplication {
 
@@ -49,8 +47,18 @@ public class GradesApplication {
                 System.out.println("Sorry, no student found with the GitHub username of " + "\"" + choice + "\"." );
             }
 
+            System.out.println("\nWould you like to view all the grades for all the students? yes or no");
+            String allGradesChoice = sc.nextLine();
+            if(allGradesChoice.equals("yes")) {
+
+                for (Map.Entry<String, Student> stringStudentEntry : students.entrySet()) {
+                    System.out.println("Username: " + stringStudentEntry.getKey() + " Grades: " + stringStudentEntry.getValue());
+                }
+
+            }
+
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Would you like to see another student?");
+            System.out.println("\nWould you like to see another student?");
             userInput = scanner.nextLine();
 
         } while (Objects.equals(userInput, "Y") || Objects.equals(userInput, "yes") || Objects.equals(userInput, "YES") || Objects.equals(userInput, "y"));
