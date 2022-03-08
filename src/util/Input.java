@@ -39,7 +39,7 @@ public class Input {
 
         try {
 
-            return userNum;
+            Integer.valueOf(userNum);
 
         } catch (NumberFormatException e) {
 
@@ -51,12 +51,18 @@ public class Input {
     }
 
     public double getDouble (double min, double max) {
-        double userNum;
+        double userNum = 0;
 
-        do {
-            System.out.println("Enter a decimal number between " + min +" and " + max + ": ");
-            userNum = scanner.nextDouble();
-        } while (userNum < min || userNum > max);
+        try {
+            do {
+                System.out.println("Enter a decimal number between " + min +" and " + max + ": ");
+                userNum = scanner.nextDouble();
+            } while (userNum < min || userNum > max);
+        } catch (Exception e) {
+            System.out.println("Wops you have an error" + e.getMessage());
+            e.printStackTrace();
+
+        }
         return userNum;
     }
 
@@ -66,8 +72,11 @@ public class Input {
         double userNum = scanner.nextDouble();
 
         try {
-            return userNum;
+
+            Double.valueOf(userNum);
+
         } catch (NumberFormatException e) {
+
             System.out.println("That is not a number with decimals: " + e.getMessage());
             System.out.println("More info about the error: ");
             e.printStackTrace();
