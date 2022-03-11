@@ -1,0 +1,10 @@
+coffee
+dog food
+roast beef
+carrots
+potatoes
+onions
+bread
+muenster cheese
+vegan cheese
+colby jack cheese
