@@ -154,12 +154,18 @@ GRANT ALL ON *.* TO 'jason'@'localhost' WITH GRANT OPTION;
 --  If you followed the above steps, you should be able to connect to MySQL with just:
 --  mysql -p
 
+
+-- LIST of reserve words you should not use in a database
+-- https://dev.mysql.com/doc/mysqld-version-reference/en/keywords-8-0.html
+
 -- CREATE a new database
 CREATE DATABASE database_name_db;
 --SHOW all databases
 SHOW DATABASES;
 --SHOW current database
 SELECT database();
+-- SELECT a database
+USE database_name;
 -- CREATE database IF it doesn't already have a name is the list of databases
 CREATE DATABASE IF NOT EXISTS sirius_example_db;
 -- Enter into a specific database
@@ -168,15 +174,56 @@ USE sirius_example_db;
 SHOW TABLES;
 -- DELETE database;
 DROP DATABASE sirius_example_db;
--- commands to show how database was created
+-- DELETE database if exists
+DROP DATABASE database_name;
+-- Insepect a database on how it was made
 SHOW CREATE DATABASE database_name;
 
-
-
-
-
-
-
+-- TODO: Create a new database named testing123
+CREATE DATABASE testing123;
+-- TODO: List all databases, make sure your new database is in the list.
+SHOW DATABASES;
++------------------------+
+| Database               |
++------------------------+
+| information_schema     |
+| mysql                  |
+| performance_schema     |
+| sirius_example_db      |
+| sys                    |
+| testing123             |
+| this_does_not_exist_db |
++------------------------+
+-- TODO: Show the SQL to recreate your database.
+SHOW CREATE DATABASE testing123;
++------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Database   | Create Database                                                                                                                      |
++------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| testing123 | CREATE DATABASE `testing123` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++------------+--------------------------------------------------------------------------------------------------------------------------------------+
+-- TODO: Switch to your new database using the USE statement.
+USE testing123;
+-- TODO: Delete your new database.
+DROP DATABASE testing123;
+-- TODO: List all databases, make sure your new database is not in the list.
+SHOW DATABASES;
++------------------------+
+| Database               |
++------------------------+
+| information_schema     |
+| mysql                  |
+| performance_schema     |
+| sirius_example_db      |
+| sys                    |
+| this_does_not_exist_db |
++------------------------+
+-- TODO: Try dropping your database again, make sure the command succeeds even though the database is now missing.
+DROP DATABASE IF EXISTS testing123;
+-- Query OK, 0 rows affected, 1 warning (0.02 sec)
+-- TODO: Create a new database called codeup_test_db and user codeup_test_user. Give codeup_test_user all permissions only on codeup_test_db. Make sure to remember this new user's password.
+CREATE DATABASE codeup_test_db;
+CREATE USER 'codeup_test_user'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL ON codeup_test_db.* TO 'codeup_test_user'@'localhost';
 
 
 
