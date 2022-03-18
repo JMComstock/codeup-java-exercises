@@ -224,6 +224,15 @@ DROP DATABASE IF EXISTS testing123;
 CREATE DATABASE codeup_test_db;
 CREATE USER 'codeup_test_user'@'localhost' IDENTIFIED BY 'pass';
 GRANT ALL ON codeup_test_db.* TO 'codeup_test_user'@'localhost';
+SHOW GRANTS for 'codeup_test_user'@'localhost';
++------------------------------------------------------------------------------+
+| Grants for codeup_test_user@localhost                                        |
++------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `codeup_test_user`@`localhost`                         |
+| GRANT ALL PRIVILEGES ON `codeup_test_db`.* TO `codeup_test_user`@`localhost` |
++------------------------------------------------------------------------------+
+2 rows in set (0.02 sec)
+
 
 
 
